@@ -27,7 +27,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="./">Home</a></li>
-                    <li><a href="./Home/About">About</a></li>
+                    <li><a href="./Home/About">menu1</a></li>
                     <li><a href="./Home/Contact">Contact</a></li> -->
                 </ul>
                 <!-- <ul class="nav navbar-nav navbar-right">
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container resources body-content">
 
 
     </div>
@@ -62,8 +62,12 @@
     <!-- End Browser Link -->
     <script>
         $(document).ready(function(){
-            $(".container").load("./resources/menu1")
+            
         })
+
+        function load(url){
+            $(".resources").load("./resources/menu1");
+        }
     </script>
 
 </body>
