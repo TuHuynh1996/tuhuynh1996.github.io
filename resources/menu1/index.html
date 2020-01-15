@@ -1,3 +1,22 @@
-<div>
-    <h1>Đây là menu 1</h1>
+<style>
+    square{
+        width: 10%;
+        height: 10%;
+        background: red;
+        border: 1 px;
+    }
+</style>
+<div class="gameContent">
+
 </div>
+<script>
+$(document).ready(function(){
+    loadGame()
+})
+
+function loadGame(){
+    for(let i = 0; i<100; i++){
+        $(".gameContent").append("<div class='square' ></div>")
+    }
+}
+</script>
