@@ -1,27 +1,35 @@
 <style>
-    .gameContent{
-        width: 100%;
-        height: 10%;
-    }
-    .square{
-        width: 10%;
-        height: 10%;
-        background: red;
-        border: 1 px;
-    }
-</style>
-<div>aaaaaaaaaaaa</div>
-<div class="gameContent">
+        .gameContent {
+            width: 100%;
+            /* height: 100%; */
+        }
 
-</div>
-<script>
-$(document).ready(function(){
-    loadGame()
-})
+        .gameContent:after {
+            content: "";
+            display: block;
+            /* the percentage of y over x  */
+            padding-top: 100%;
+        }
 
-function loadGame(){
-    for(let i = 0; i<100; i++){
-        $(".gameContent").append("<div class='square' ></div>")
-    }
-}
-</script>
+        .square {
+            width: 10%;
+            height: 10%;
+            background: red;
+            border: 1 px;
+        }
+    </style>
+    <div>aaaaaaaaaaaa</div>
+    <div class="gameContent">
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            loadGame()
+        })
+
+        function loadGame() {
+            for (let i = 0; i < 100; i++) {
+                $(".gameContent").append("<div class='square' ></div>")
+            }
+        }
+    </script>
