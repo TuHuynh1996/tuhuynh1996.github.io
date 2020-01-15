@@ -27,7 +27,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="./">Home</a></li>
-                    <li><a href="./Home/About">menu1</a></li>
+                    <li><a onclick="load('./resources/menu1')" >menu1</a></li>
                     <li><a href="./Home/Contact">Contact</a></li> -->
                 </ul>
                 <!-- <ul class="nav navbar-nav navbar-right">
@@ -64,9 +64,9 @@
         $(document).ready(function(){
             
         })
-
+        //load resources
         function load(url){
-            $(".resources").load("./resources/menu1");
+            $(".resources").load(url);
         }
     </script>
 
