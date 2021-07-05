@@ -252,16 +252,17 @@ body{
     border-top: #ffffff 1px solid;
 }
 #about_left,#about_right1,#about_right2{
-    width: 430px;
+    width: 46%;
     box-shadow: #0000000c 1px 1px 4px;
     float: left;
-    margin: 20px 10px 0 0;
+    margin: 20px 4% 0 0;
 }
 #about_left{
     height: 340px;
 }
 #about_right1{
     height: 210px;
+    padding: 20px;
 }
 #about_right2{
     min-height: 120px;
@@ -361,10 +362,10 @@ body{
     border-top: #ffffff 1px solid;
 }
 #skills_left,#skills_right{
-    width: 430px;
+    width: 46%;
     box-shadow: #0000000c 1px 1px 4px;
     float: left;
-    margin: 20px 10px 0 0; 
+    margin: 20px 4% 0 0; 
     min-height: 200px;
 }
 #skills h2{
@@ -556,14 +557,15 @@ body{
     position: absolute;
     color: #1CB9C8;
     font-size: 18px;
-    left: -17px;
+    left: -14px;
     top:-24px;
     width: 30px;
     height: 30px;
     text-align: center;
-    line-height: 30px;
+    line-height: 23px;
     border-radius: 50%;
     border: white 4px solid;
+
 }
 #experience p{
     color: #898A95;
@@ -597,7 +599,7 @@ body{
     width: 8px;
     background: #1CB9C8;
     height: 8px;
-    left: -4px;
+    left: -2px;
     top: 60px;
     border-radius: 50%;
     border:#E9E9E9 3px solid;
@@ -678,7 +680,7 @@ body{
 }
 #education .leaves_left{
     position: absolute;
-    width: 111%;
+    width: 125%;
     height: 2px;
     top:-1px;
     left: 0;
@@ -686,7 +688,7 @@ body{
 }
 #education .leaves_right{
     position: absolute;
-    width: 111%;
+    width: 125%;
     height: 2px;
     top:-1px;
     right: 0;
@@ -881,8 +883,8 @@ body{
     box-shadow: #0000005e 0px 2px 4px;
     border-top: #ffffff 1px solid;
 }
-#contact #info{
-    width: 275px;
+#info{
+    width: 40%;
     height: 295px;
     box-sizing: border-box;
     padding: 30px 20px;
@@ -909,15 +911,17 @@ body{
     margin-bottom: 28px;
     color: #5A5D82;
 }
-#contact #sms{
-    width: 510px;
+#sms{
+    width: 50%;
+    height: 295px;
     float: left;
     padding: 20px 40px;
     box-sizing: border-box;
     margin: 30px 0 30px 30px;
 }
-#sms .form-group{
-    float: left;
+
+.row{
+    display: inline-block;
 }
 #sms .form-control{
     margin: 5px;
@@ -925,6 +929,10 @@ body{
     padding: 5px;
     color: #000000;
     border-radius: 5px;
+}
+#message{
+    width: 100%;
+    height: 120px !important;
 }
 .btn{
     width: 100px;
@@ -942,7 +950,7 @@ body{
     background: #1CB9C8;
 }
 #map{
-    width: 815px;
+    width: 92.5%;
     height: 400px;
     float: left;
     margin: 0 0 30px 30px;

@@ -9,7 +9,7 @@
         width: 130px;
     }
 }
-@media all and (max-width: 750px) {
+@media all and (max-width: 900px) {
     body{
         margin: 0;
         padding: 0;
@@ -100,7 +100,7 @@
         width: 8px;
         background: #1CB9C8;
         height: 8px;
-        left: -4px;
+        left: -2px;
         top: 60px;
         border-radius: 50%;
         border:#E9E9E9 3px solid;
@@ -129,10 +129,10 @@
         margin-bottom: 20px;
     }
     #education .leaves_left{
-        width: 115%;
+        width: 132%;
     }
     #education .leaves_right{
-        width: 115%;
+        width: 132%;
         left: 0;
     }
         /* fortfolio55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
@@ -151,6 +151,7 @@
     #contact #info, #sms,#map{
         width: 90% !important;
         margin: 10px !important;
+        height: auto;
     }
     #sms .form-control{
         width: 100% !important;
