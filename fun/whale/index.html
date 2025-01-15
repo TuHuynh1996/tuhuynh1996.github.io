@@ -18,8 +18,22 @@
     }
   </style>
   <body>
-    <!-- credits to the writter @diegoleme -->
-    <div id="whale"></div>
-    <script src="whale.js"></script>
-  </body> 
+    <audio id="divAudio" autoplay loop>
+      <source src="../../sound/C418-WetHands.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="whale" onmouseover="playMusic()"></div>
+  </body>
+
+  <script>
+    var vAudio = document.getElementById("divAudio");
+    var hasInit = false;
+    function playMusic() {
+      if (!hasInit) {
+        hasInit = true;
+        vAudio.play();
+      }
+    }
+  </script>
+  <script src="whale.js"></script>
 </html>
