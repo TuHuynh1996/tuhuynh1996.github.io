@@ -72,10 +72,12 @@
           text-decoration: none;
           margin-left: 30px;
           margin-bottom: 10px;
+          color: rgb(48, 48, 48);
         }
         p {
           text-decoration: none;
           margin-left: 30px;
+          color: rgb(48, 48, 48);
         }
         button {
           text-decoration: none;
@@ -102,25 +104,42 @@
           }
         }
       }
+      li:hover {
+        > a {
+          text-decoration: underline;
+          color: blue;
+        }
+        > p {
+          text-decoration: underline;
+          color: blue;
+        }
+      }
     }
     .material-symbols-outlined {
       position: absolute;
       top: 3px;
     }
-    .pointer{
+    .pointer {
       cursor: pointer;
     }
   </style>
   <body>
-    <ul  id="tree1" class="tree pointer">
+    <ul id="tree1" class="tree pointer">
       <li>
-        <p >Tu Huynh</p>
+        <p>Tu Huynh</p>
         <ul>
-          <li><a href="./html-cv">Resume by html/css</a></li>
+          <li>
+            <p>Resume</p>
+            <ul>
+              <li><a href="./resume/html-css">Only html and css</a></li>
+              <li><a href="./resume/simple portfolio">Simple portfolio</a></li>
+            </ul>
+          </li>
           <li>
             <p>Fun</p>
             <ul>
               <li><a href="./fun/whale">Whale animation</a></li>
+              <li><a href="./fun/light-reveal">Light reveal</a></li>
             </ul>
           </li>
         </ul>
