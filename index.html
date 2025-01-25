@@ -3,12 +3,170 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home page</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
+
+  <style>
+    .tree {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-left: 1em;
+        position: relative;
+        ul {
+          margin-left: 0.5em;
+        }
+        &:before {
+          content: "";
+          display: block;
+          width: 0;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          border-left: 1px solid;
+        }
+        li {
+          &:before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 0;
+            border-top: 1px solid;
+            margin-top: -1px;
+            position: absolute;
+            top: 1em;
+            left: 0;
+          }
+          &:last-child {
+            &:before {
+              background: #fff;
+              height: auto;
+              top: 1em;
+              bottom: 0;
+            }
+          }
+        }
+      }
+      li {
+        margin: 0;
+        padding: 0 1em;
+        line-height: 2em;
+        font-weight: 700;
+        position: relative;
+        .expand {
+          display: block;
+        }
+        .collapse {
+          display: none;
+        }
+        a {
+          text-decoration: none;
+          margin-left: 30px;
+          margin-bottom: 10px;
+        }
+        p {
+          text-decoration: none;
+          margin-left: 30px;
+        }
+        button {
+          text-decoration: none;
+          border: none;
+          background: transparent;
+          margin: 0px 0px 0px 0px;
+          padding: 0px 0px 0px 0px;
+          outline: 0;
+          &:active {
+            text-decoration: none;
+            border: none;
+            background: transparent;
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            outline: 0;
+          }
+          &:focus {
+            text-decoration: none;
+            border: none;
+            background: transparent;
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            outline: 0;
+          }
+        }
+      }
+    }
+    .material-symbols-outlined {
+      position: absolute;
+      top: 3px;
+    }
+    .pointer{
+      cursor: pointer;
+    }
+  </style>
   <body>
-    <ul>
-      <li><a href="./html-cv">./html-cv</a></li>
-      <li><a href="./fun/whale">./fun/whale</a></li>
+    <ul  id="tree1" class="tree pointer">
+      <li>
+        <p >Tu Huynh</p>
+        <ul>
+          <li><a href="./html-cv">Resume by html/css</a></li>
+          <li>
+            <p>Fun</p>
+            <ul>
+              <li><a href="./fun/whale">Whale animation</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
   </body>
+  <script>
+    var tree = document.getElementById("tree1");
+    if (tree) {
+      // add folder collapse expand event
+      tree.querySelectorAll("ul").forEach(function (el, key, parent) {
+        var elm = el.parentNode;
+        elm.classList.add("branch");
+        var x = document.createElement("i");
+        x.classList.add("indicator");
+        x.classList.add("material-symbols-outlined");
+        x.innerText = "folder";
+        elm.insertBefore(x, elm.firstChild);
+        el.classList.add("collapse");
+        elm.addEventListener(
+          "click",
+          function (event) {
+            if (elm === event.target || elm === event.target.parentNode) {
+              if (el.classList.contains("collapse")) {
+                el.classList.add("expand");
+                el.classList.remove("collapse");
+                x.innerText = "folder_open";
+              } else {
+                el.classList.add("collapse");
+                el.classList.remove("expand");
+                x.innerText = "folder";
+              }
+            }
+          },
+          false
+        );
+      });
+
+      // add link icon
+      tree.querySelectorAll("a").forEach(function (el, key, parent) {
+        var elm = el.parentNode;
+        var x = document.createElement("i");
+        x.classList.add("material-symbols-outlined");
+        x.innerText = "link";
+        elm.insertBefore(x, elm.firstChild);
+      });
+    }
+  </script>
 </html>
