@@ -65,7 +65,7 @@
         .expand {
           display: block;
         }
-        .collapse {
+        .collapse:not(.expand) {
           display: none;
         }
         a {
@@ -75,6 +75,7 @@
           color: rgb(48, 48, 48);
         }
         p {
+          margin: 0;
           text-decoration: none;
           margin-left: 30px;
           color: rgb(48, 48, 48);
@@ -122,29 +123,53 @@
     .pointer {
       cursor: pointer;
     }
+    .container {
+      margin: auto;
+      max-width: 500px;
+    }
   </style>
   <body>
-    <ul id="tree1" class="tree pointer">
-      <li>
-        <p>Tu Huynh</p>
-        <ul>
-          <li>
-            <p>Resume</p>
-            <ul>
-              <li><a href="./resume/html-css">Only html and css</a></li>
-              <li><a href="./resume/simple portfolio">Simple portfolio</a></li>
-            </ul>
-          </li>
-          <li>
-            <p>Fun</p>
-            <ul>
-              <li><a href="./fun/whale">Whale animation</a></li>
-              <li><a href="./fun/light-reveal">Light reveal</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
+    <div class="container">
+      <ul id="tree1" class="tree pointer">
+        <li>
+          <p>Tu Huynh</p>
+          <ul class="expand">
+            <li>
+              <p>Resume</p>
+              <ul>
+                <li><a href="./resume/html-css">Only html and css</a></li>
+                <li>
+                  <a href="./resume/simple portfolio">Simple portfolio</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>Fun</p>
+              <ul>
+                <li><a href="./fun/whale">Whale animation</a></li>
+                <li><a href="./fun/sunrise">Sunrise</a></li>
+                <li><a href="./fun/light-reveal">Light reveal</a></li>
+              </ul>
+            </li>
+            <li>
+              <p>Components</p>
+              <ul>
+                <li>
+                  <p>Loading</p>
+                  <ul>
+                    <li><a href="./components/Loading/cat-loader">Cat loader</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Form</p>
+                  <ul></ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </body>
   <script>
     var tree = document.getElementById("tree1");
