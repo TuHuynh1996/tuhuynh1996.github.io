@@ -94,7 +94,7 @@
         <tbody>
           <tr>
             <td>🪟 Windows 10/11 (64-bit)</td>
-            <td><code>PDF-SecureConvert-vX.X.X-win-x64.zip</code></td>
+            <td><code>PDF-SecureConvert-win-x64.zip</code></td>
             <td>Extract with 7-Zip → run exe</td>
             <td>
               <a id="tbl-win" class="btn btn--win"
@@ -104,7 +104,7 @@
           </tr>
           <tr>
             <td>🍎 macOS Apple Silicon</td>
-            <td><code>PDF-SecureConvert-vX.X.X-osx-arm64.dmg</code></td>
+            <td><code>PDF-SecureConvert-osx-arm64.dmg</code></td>
             <td>macOS 12 Monterey+</td>
             <td>
               <a id="tbl-mac" class="btn btn--mac"
@@ -114,7 +114,7 @@
           </tr>
           <tr>
             <td>🐧 Linux (64-bit)</td>
-            <td><code>PDF-SecureConvert-vX.X.X-linux-x64</code></td>
+            <td><code>PDF-SecureConvert-linux-x64</code></td>
             <td>Ubuntu 20.04+ / glibc 2.31+</td>
             <td>
               <a id="tbl-linux" class="btn btn--linux"
@@ -152,36 +152,18 @@
   </footer>
 
 <script>
-  const RELEASES_API = 'https://api.github.com/repos/TuHuynh1996/ToolStore/releases';
-  const FALLBACK     = 'https://github.com/TuHuynh1996/ToolStore/releases/latest';
-
-  const pairs = [
-    { ids: ['dl-win',   'tbl-win'],   match: n => n.endsWith('-win-x64.zip') },
-    { ids: ['dl-mac',   'tbl-mac'],   match: n => n.endsWith('-osx-arm64.dmg') },
-    { ids: ['dl-linux', 'tbl-linux'], match: n => n.endsWith('-linux-x64') },
+  const BASE = 'https://github.com/TuHuynh1996/ToolStore/releases/latest/download';
+  const links = [
+    { ids: ['dl-win',   'tbl-win'],   file: 'PDF-SecureConvert-win-x64.zip' },
+    { ids: ['dl-mac',   'tbl-mac'],   file: 'PDF-SecureConvert-osx-arm64.dmg' },
+    { ids: ['dl-linux', 'tbl-linux'], file: 'PDF-SecureConvert-linux-x64' },
   ];
-
-  fetch(RELEASES_API)
-    .then(r => r.json())
-    .then(releases => {
-      // find first published (non-draft) release that has assets
-      const release = releases.find(r => !r.draft && r.assets && r.assets.length > 0);
-      if (!release) return;
-      const assets = release.assets;
-      pairs.forEach(({ ids, match }) => {
-        const asset = assets.find(a => match(a.name));
-        if (!asset) return;
-        ids.forEach(id => {
-          const el = document.getElementById(id);
-          if (el) {
-            el.href = asset.browser_download_url;
-            el.removeAttribute('target');   // download in same tab
-            el.removeAttribute('rel');
-          }
-        });
-      });
-    })
-    .catch(() => { /* keep fallback hrefs */ });
+  links.forEach(({ ids, file }) => {
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.href = `${BASE}/${file}`;
+    });
+  });
 </script>
 
 </body>
