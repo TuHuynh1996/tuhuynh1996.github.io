@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>App Store Screenshots — PDF SecureConvert</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #111; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif; color: #fff; padding: 40px; }
+
+    h1 { text-align: center; margin-bottom: 12px; font-size: 1.5rem; color: #aaa; }
+    .instructions { text-align: center; color: #666; margin-bottom: 40px; font-size: 0.85rem; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1400px; margin: 0 auto; }
+
+    .frame {
+      width: 2560px;
+      height: 1600px;
+      transform: scale(0.25);
+      transform-origin: top left;
+      background: linear-gradient(160deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .frame-wrapper {
+      width: 640px;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .frame .caption {
+      font-size: 64px;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-align: center;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+
+    .frame .subcaption {
+      font-size: 28px;
+      font-weight: 400;
+      color: #94A3B8;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .frame .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #3B82F6, #2563EB);
+      color: #fff;
+      padding: 8px 28px;
+      border-radius: 24px;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .frame .privacy-badge {
+      background: linear-gradient(135deg, #22C55E, #16A34A);
+    }
+
+    .frame img {
+      width: 2300px;
+      transform: scale(0.8);
+      transform-origin: top center;
+      border-radius: 16px;
+      box-shadow: 0 -8px 60px rgba(0,0,0,0.5);
+    }
+
+    .frame-number {
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      color: #334155;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    @media print {
+      body { background: #000; }
+      .instructions, h1 { display: none; }
+      .grid { display: block; }
+      .frame-wrapper { width: 1280px; height: 800px; page-break-after: always; }
+      .frame { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>App Store Screenshot Generator</h1>
+  <p class="instructions">
+    Right-click each frame → Inspect → right-click the .frame div → "Capture node screenshot" in DevTools.<br/>
+    Or use Cmd+Shift+4 on the full-size popup (click a frame to open it).
+  </p>
+
+  <div class="grid">
+
+    <!-- Screenshot 1: Files to PDF -->
+    <div class="frame-wrapper">
+      <div class="frame" id="shot-1">
+        <span class="frame-number">#1</span>
+        <span class="badge">Files to PDF</span>
+        <div class="caption">Convert DOCX & Images to PDF</div>
+        <div class="subcaption">Choose page size, orientation, and output folder</div>
+        <img src="pic-raw-1.png" alt="Files to PDF" />
+      </div>
+    </div>
+
+    <!-- Screenshot 2: Tool Grid -->
+    <div class="frame-wrapper">
+      <div class="frame" id="shot-2">
+        <span class="frame-number">#2</span>
+        <span class="badge">PDF Tools</span>
+        <div class="caption">The Only PDF Toolkit You'll Ever Need</div>
+        <div class="subcaption">Compress, merge, protect, extract, and watermark</div>
+        <img src="pic-raw-2.png" alt="Tool Grid" />
+      </div>
+    </div>
+
+    <!-- Screenshot 3: Pages Tool -->
+    <div class="frame-wrapper">
+      <div class="frame" id="shot-3">
+        <span class="frame-number">#3</span>
+        <span class="badge">Pages</span>
+        <div class="caption">Visual Page Manager</div>
+        <div class="subcaption">Drag to reorder, merge multiple PDFs, remove pages</div>
+        <img src="pic-raw-3.png" alt="Pages Tool" />
+      </div>
+    </div>
+
+    <!-- Screenshot 4: Compress -->
+    <div class="frame-wrapper">
+      <div class="frame" id="shot-4">
+        <span class="frame-number">#4</span>
+        <span class="badge">Compress</span>
+        <div class="caption">Reduce File Size</div>
+        <div class="subcaption">3 compression levels — choose quality vs size</div>
+        <img src="pic-raw-4.png" alt="Compress Tool" />
+      </div>
+    </div>
+
+    <!-- Screenshot 5: Watermark -->
+    <div class="frame-wrapper">
+      <div class="frame" id="shot-5">
+        <span class="frame-number">#5</span>
+        <span class="badge">Watermark</span>
+        <div class="caption">Custom Watermarks with Live Preview</div>
+        <div class="subcaption">Text or image — adjust color, size, rotation, opacity</div>
+        <img src="pic-raw-5.png" alt="Watermark Tool" />
+      </div>
+    </div>
+
+    <!-- Screenshot 6: Privacy -->
+    <div class="frame-wrapper">
+      <div class="frame" id="shot-6">
+        <span class="frame-number">#6</span>
+        <span class="badge privacy-badge">100% Offline</span>
+        <div class="caption">Your Data Stays Yours</div>
+        <div class="subcaption">Zero network requests. Zero data transmitted. Always.</div>
+        <img src="pic-raw-6.png" alt="Privacy Report" />
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Click a frame to open full-size in new tab with all styles intact
+    document.querySelectorAll('.frame').forEach(frame => {
+      frame.style.cursor = 'pointer';
+      frame.addEventListener('click', () => {
+        const imgSrc = frame.querySelector('img').src;
+        const badge = frame.querySelector('.badge').outerHTML;
+        const caption = frame.querySelector('.caption').textContent;
+        const subcaption = frame.querySelector('.subcaption').textContent;
+        const w = window.open('', '_blank');
+        w.document.write(`<!DOCTYPE html>
+<html><head><meta charset="UTF-8"/><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width: 2560px; height: 1600px; overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  }
+  .frame {
+    width: 2560px; height: 1600px;
+    background: linear-gradient(160deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+    display: flex; flex-direction: column; align-items: center;
+    padding: 40px 80px 0; overflow: hidden;
+  }
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #3B82F6, #2563EB);
+    color: #fff; padding: 8px 28px; border-radius: 24px;
+    font-size: 22px; font-weight: 600; margin-bottom: 24px;
+  }
+  .privacy-badge { background: linear-gradient(135deg, #22C55E, #16A34A); }
+  .caption { font-size: 64px; font-weight: 700; color: #fff; text-align: center; margin-bottom: 8px; letter-spacing: -1px; }
+  .subcaption { font-size: 28px; color: #94A3B8; text-align: center; margin-bottom: 40px; }
+  img { width: 2300px; transform: scale(0.8); transform-origin: top center; border-radius: 16px; box-shadow: 0 -8px 60px rgba(0,0,0,0.5); }
+</style></head><body>
+  <div class="frame">
+    ${badge}
+    <div class="caption">${caption}</div>
+    <div class="subcaption">${subcaption}</div>
+    <img src="${imgSrc}" />
+  </div>
+</body></html>`);
+        w.document.close();
+      });
+    });
+  </script>
+
+</body>
+</html>
