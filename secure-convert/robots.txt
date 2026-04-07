@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths if applicable
+Disallow: /admin/
+Disallow: /private/
+
+# Specific rules for common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://tuhuynh1996.github.io/secure-convert/sitemap.xml
+
+# Crawl-delay to be respectful (optional)
+Crawl-delay: 0.5
